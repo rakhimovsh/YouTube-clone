@@ -7,11 +7,16 @@ import Dot from "../../Assets/Images/dotCollection.png";
 import Notification from "../../Assets/Images/notification.png";
 import User from "../../Assets/Images/Userpic.png";
 import { NavLink } from "react-router-dom";
+import { Context as MenuContext } from "../../Context/HamburgerMenu";
 
 function Header() {
+  const { menu, setMenu } = React.useContext(MenuContext);
+  const handleClick = () => {
+    menu.current.classList.toggle("close");
+  };
   return (
     <header className="header">
-      <button className="header__btn--menu">
+      <button onClick={handleClick} className="header__btn--menu">
         <img className="header__logo" src={HamburgerMenu} alt="menu" />
       </button>
       <NavLink to={"/"}>
