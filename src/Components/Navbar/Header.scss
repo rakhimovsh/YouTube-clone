@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+
+  &__btn--menu {
+    margin-right: 28px;
+    border: none;
+    background-color: transparent;
+    flex-shrink: 0;
+  }
+  &__logo {
+    flex-shrink: 0;
+  }
+  &__search {
+    max-width: 550px;
+    width: 100%;
+    margin-left: 59px;
+    padding: 12px 23px;
+    background: #f9f9f9;
+    mix-blend-mode: normal;
+    border-radius: 22px;
+    border-color: transparent;
+    background-image: url("../../Assets/Images/lupa.png");
+    background-repeat: no-repeat;
+    background-position: center right 15px;
+  }
+  &__right {
+    margin-left: auto;
+    margin-right: 45px;
+    max-width: 175px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
