@@ -1,5 +1,10 @@
 .sub {
   padding-top: 59px;
+  display: flex;
+  flex-direction: column;
+  &__list {
+    flex-shrink: 1;
+  }
   &__title {
     margin-bottom: 30px;
     font-weight: 700;

@@ -10,7 +10,7 @@ function App() {
   const { token } = React.useContext(LoginContext);
   const isLoggined = token;
 
-  if (token) {
+  if (isLoggined) {
     return (
       <MenuProvider>
         <Authonticated />

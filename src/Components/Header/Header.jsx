@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 import { Context as MenuContext } from "../../Context/HamburgerMenu";
 
 function Header() {
-  const { menu, setMenu } = React.useContext(MenuContext);
+  const { menu } = React.useContext(MenuContext);
   const handleClick = () => {
     menu.current.classList.toggle("close");
   };
@@ -20,7 +20,7 @@ function Header() {
         <img className="header__logo" src={HamburgerMenu} alt="menu" />
       </button>
       <NavLink to={"/"}>
-        <img src={SiteLogo} width={116} height={25} />
+        <img src={SiteLogo} alt="" width={116} height={25} />
       </NavLink>
       <input
         className="header__search"
@@ -30,13 +30,13 @@ function Header() {
       />
       <div className="header__right">
         <NavLink to={"/"}>
-          <img src={Phone} />
+          <img src={Phone} alt="" />
         </NavLink>
         <NavLink to={"/"}>
-          <img src={Dot} />
+          <img src={Dot} alt="" />
         </NavLink>
         <NavLink to={"/"}>
-          <img src={Notification} />
+          <img src={Notification} alt="" />
         </NavLink>
       </div>
       <NavLink to={"/"}>

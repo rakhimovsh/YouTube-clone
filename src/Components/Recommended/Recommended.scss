@@ -1,0 +1,44 @@
+.recommended {
+  margin-bottom: 50px;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  &__item {
+    width: 540px;
+    flex-shrink: 0;
+  }
+  &__item + &__item {
+    margin-left: 40px;
+  }
+  &__img {
+    width: 540px !important;
+    height: 300px !important;
+    border-radius: 14px;
+  }
+  &__title {
+    margin-top: 10px;
+  }
+  &__link {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #19202c;
+  }
+}

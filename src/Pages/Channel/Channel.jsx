@@ -1,8 +1,11 @@
 import React from "react";
 import "./Channel.scss";
+import { useParams } from "react-router-dom";
 
 function Channel() {
-  return <Main>Channel page</Main>;
+  const params = useParams();
+
+  return <section>Channel page</section>;
 }
 
 export default Channel;

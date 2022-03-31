@@ -26,64 +26,64 @@ function Navbar() {
       <ul className="list-unstyled p-0 navbar__list">
         <li className="navbar__item">
           <NavLink className="navbar__link--home" to={"/"}>
-            <img className="navbar__icon" src={home} /> Home
+            <img className="navbar__icon" src={home} alt="" /> Home
           </NavLink>
         </li>
         <li className="navbar__item">
-          <NavLink className="navbar__link" to={"/"}>
-            <img className="navbar__icon" src={Trending} /> Trending
+          <NavLink className="navbar__link" to={"/trending"}>
+            <img className="navbar__icon" src={Trending} alt="" /> Trending
           </NavLink>
         </li>
         <li className="navbar__item">
-          <NavLink className="navbar__link" to={"/"}>
-            <img className="navbar__icon" src={sub} /> Subscriptions
+          <NavLink className="navbar__link" to={"/Subscriptions"}>
+            <img className="navbar__icon" src={sub} alt="" /> Subscriptions
           </NavLink>
         </li>
         <li className="navbar__item"> </li>
         <li className="navbar__item">
-          <NavLink className="navbar__link" to={"/"}>
-            <img className="navbar__icon" src={lib} /> Library
+          <NavLink className="navbar__link" to={"/Library"}>
+            <img className="navbar__icon" src={lib} alt="" /> Library
           </NavLink>
         </li>
         <li className="navbar__item">
-          <NavLink className="navbar__link" to={"/"}>
-            <img className="navbar__icon" src={history} /> History
+          <NavLink className="navbar__link" to={"/History"}>
+            <img className="navbar__icon" src={history} alt="" /> History
           </NavLink>
         </li>
         <li className="navbar__item">
-          <NavLink className="navbar__link" to={"/"}>
-            <img className="navbar__icon" src={later} /> Watch later
+          <NavLink className="navbar__link" to={"/later"}>
+            <img className="navbar__icon" src={later} alt="" /> Watch later
           </NavLink>
         </li>
         <li className="navbar__item">
-          <NavLink className="navbar__link" to={"/"}>
-            <img className="navbar__icon" src={fav} /> Favourites
+          <NavLink className="navbar__link" to={"/Favourites"}>
+            <img className="navbar__icon" src={fav} alt="" /> Favourites
           </NavLink>
         </li>
         <li className="navbar__item">
-          <NavLink className="navbar__link" to={"/"}>
-            <img className="navbar__icon" src={like} /> Liked videos
+          <NavLink className="navbar__link" to={"/Liked"}>
+            <img className="navbar__icon" src={like} alt="" /> Liked videos
           </NavLink>
         </li>
         <li className="navbar__item">
-          <NavLink className="navbar__link" to={"/"}>
-            <img className="navbar__icon" src={music} /> Music
+          <NavLink className="navbar__link" to={"/Music"}>
+            <img className="navbar__icon" src={music} alt="" /> Music
           </NavLink>
         </li>
         <li className="navbar__item">
-          <NavLink className="navbar__link" to={"/"}>
-            <img className="navbar__icon" src={games} /> Games
+          <NavLink className="navbar__link" to={"/Games"}>
+            <img className="navbar__icon" src={games} alt="" /> Games
           </NavLink>
         </li>
         <li className="navbar__item">
-          <NavLink className="navbar__link" to={"/"}>
-            <img className="navbar__icon" src={more} /> Show more
+          <NavLink className="navbar__link" to={"/Show"}>
+            <img className="navbar__icon" src={more} alt="" /> Show more
           </NavLink>
         </li>
       </ul>
       <Subscriptions />
-      <NavLink className="navbar__link navbar__settings" to={"/"}>
-        <img className="navbar__settingsImg" src={Settings} /> Settings
+      <NavLink className="navbar__link navbar__settings" to={"/Settings"}>
+        <img className="navbar__settingsImg" src={Settings} alt="" /> Settings
       </NavLink>
     </section>
   );
