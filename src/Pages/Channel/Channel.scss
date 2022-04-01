@@ -1,0 +1,52 @@
+.channel {
+  padding-top: 30px;
+  overflow-x: hidden;
+  &__background {
+    margin-bottom: 30px;
+    border-radius: 14px;
+  }
+  &__user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 38px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 33px;
+    color: #19202c;
+    &Img {
+      margin-right: 20px;
+      border-radius: 50%;
+    }
+  }
+  &__item + &__item {
+    margin-left: 50px;
+  }
+  &__item {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    &.active {
+      color: red;
+      text-decoration: underline;
+    }
+  }
+  &__nav {
+    margin-bottom: 54px;
+  }
+  &__video {
+    flex-shrink: 0;
+    border-radius: 14px;
+    height: 250px !important;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 34px;
+  }
+  &__videoDesc {
+    width: 40%;
+  }
+  &__player {
+    margin-bottom: 59px;
+  }
+}

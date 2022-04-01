@@ -2,17 +2,7 @@ import React from "react";
 import "./Subscriptions.scss";
 import { NavLink } from "react-router-dom";
 
-function Subscriptions() {
-  const [users, setUsers] = React.useState({});
-  React.useEffect(() => {
-    const callUsers = async () => {
-      const res = await fetch("https://reqres.in/api/users?page=2");
-      const data = await res.json();
-      setUsers(data?.data);
-    };
-    callUsers();
-  }, []);
-
+function Subscriptions({ users }) {
   return (
     <div className="sub">
       <h2 className="sub__title">Subscriptions</h2>

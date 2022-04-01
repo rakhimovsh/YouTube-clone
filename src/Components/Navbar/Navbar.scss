@@ -13,6 +13,9 @@
     left: -100%;
     position: absolute;
   }
+  &__list {
+    margin-bottom: 59px;
+  }
   &__item + &__item {
     margin-top: 28px;
   }

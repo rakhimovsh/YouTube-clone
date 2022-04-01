@@ -17,6 +17,15 @@ import Settings from "../../Assets/Images/settings.png";
 import { Context as MenuContext } from "../../Context/HamburgerMenu";
 function Navbar() {
   const { menu, setMenu } = React.useContext(MenuContext);
+  const [users, setUsers] = React.useState({});
+  React.useEffect(() => {
+    const callUsers = async () => {
+      const res = await fetch("https://reqres.in/api/users?page=2");
+      const data = await res.json();
+      setUsers(data?.data);
+    };
+    callUsers();
+  }, []);
   const xRef = React.useRef();
   React.useEffect(() => {
     setMenu(xRef);
@@ -81,7 +90,7 @@ function Navbar() {
           </NavLink>
         </li>
       </ul>
-      <Subscriptions />
+      <Subscriptions users={users} />
       <NavLink className="navbar__link navbar__settings" to={"/Settings"}>
         <img className="navbar__settingsImg" src={Settings} alt="" /> Settings
       </NavLink>
