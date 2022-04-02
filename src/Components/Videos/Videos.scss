@@ -48,5 +48,8 @@
     font-size: 16px;
     line-height: 20px;
     color: #19202c;
+    &.dark {
+      color: aliceblue;
+    }
   }
 }

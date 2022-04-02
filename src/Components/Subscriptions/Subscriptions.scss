@@ -9,6 +9,9 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 23px;
+    &.dark {
+      color: aliceblue;
+    }
   }
   &__item + &__item {
     margin-top: 23px;

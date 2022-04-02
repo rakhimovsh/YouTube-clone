@@ -7,13 +7,20 @@ import Player from "./Pages/Player/Player";
 import { Route, Routes } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
+import { Context as ThemeContext } from "./Context/Theme";
 
 function Authonticated() {
   const navigate = useNavigate();
+  const { theme } = React.useContext(ThemeContext);
+  // if (theme) {
+  //   document.querySelector("#root").classList.add("dark");
+  // } else {
+  //   document.querySelector("#root").classList.remove("dark");
+  // }
   return (
-    <div className="container">
+    <div className={`container ${theme ? "dark" : ""}`}>
       <Header />
-      <main className="main">
+      <main className={`main ${theme ? "dark" : ""}`}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

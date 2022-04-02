@@ -34,6 +34,19 @@ img {
   white-space: nowrap;
   width: 1px;
 }
+.container {
+  &.dark {
+    background-color: #17171e;
+  }
+}
 .main {
   display: flex;
+  &.dark {
+    background-color: #17171e;
+  }
+}
+#root {
+  &.dark {
+    background-color: #17171e;
+  }
 }

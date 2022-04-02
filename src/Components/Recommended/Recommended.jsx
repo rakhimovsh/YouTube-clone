@@ -1,8 +1,10 @@
 import React from "react";
 import "./Recommended.scss";
 import { NavLink } from "react-router-dom";
+import { Context as ThemeContex } from "../../Context/Theme";
 
 function Recommended({ videos }) {
+  const { theme } = React.useContext(ThemeContex);
   return (
     <ul className="recommended">
       {videos.length > 0 &&
@@ -16,7 +18,9 @@ function Recommended({ videos }) {
                 width={540}
                 height={300}
               />
-              <h4 className="recommended__title">{video.title}</h4>
+              <h4 className={`recommended__title ${theme ? "dark" : ""}`}>
+                {video.title}
+              </h4>
             </NavLink>
           </li>
         ))}

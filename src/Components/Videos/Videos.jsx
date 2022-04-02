@@ -1,8 +1,10 @@
 import React from "react";
 import "./Videos.scss";
 import { NavLink } from "react-router-dom";
+import { Context as ThemeContext } from "../../Context/Theme";
 
 function Videos({ videos }) {
+  const { theme } = React.useContext(ThemeContext);
   return (
     <div className="videos">
       <ul className="videos__list">
@@ -17,7 +19,9 @@ function Videos({ videos }) {
                   width={250}
                   height={150}
                 />
-                <h4 className="videos__title">{user.title}</h4>
+                <h4 className={`videos__title ${theme ? "dark" : ""}`}>
+                  {user.title}
+                </h4>
               </NavLink>
             </li>
           ))}

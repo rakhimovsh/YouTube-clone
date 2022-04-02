@@ -11,6 +11,9 @@
     font-weight: 700;
     font-size: 36px;
     line-height: 45px;
+    &.dark {
+      color: aliceblue;
+    }
   }
   &__subInfo {
     font-weight: 400;
@@ -30,5 +33,15 @@
   }
   &__user {
     height: 80px !important;
+  }
+  &__userName {
+    &.dark {
+      color: aliceblue;
+    }
+  }
+  &__userDesc {
+    &.dark {
+      color: aliceblue;
+    }
   }
 }

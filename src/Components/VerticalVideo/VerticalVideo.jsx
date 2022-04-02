@@ -2,8 +2,10 @@ import React from "react";
 import "./VerticalVideo.scss";
 import { NavLink } from "react-router-dom";
 import { Switch } from "@mui/material";
+import {Context as ThemeContext} from '../../Context/Theme'
 
 function VerticalVideo({ videos }) {
+  const {theme} = React.useContext(ThemeContext)
   return (
     <div className="verticalVideo ps-5">
       <div className="d-flex align-items-center justify-content-between">
@@ -22,7 +24,7 @@ function VerticalVideo({ videos }) {
                   width={250}
                   height={150}
                 />
-                <h4 className="videos__title">{video.title}</h4>
+                <h4 className={`videos__title ${theme ? 'dark': ''}`}>{video.title}</h4>
               </NavLink>
             </li>
           ))}

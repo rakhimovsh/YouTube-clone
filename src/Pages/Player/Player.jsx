@@ -8,10 +8,12 @@ import Dislike from "../../Assets/Images/dislike.png";
 import Share from "../../Assets/Images/share.png";
 import threeDots from "../../Assets/Images/three-dots.svg";
 import VerticalVideo from "../../Components/VerticalVideo/VerticalVideo";
+import { Context as ThemeContext } from "../../Context/Theme";
 function Player() {
   const params = useParams();
   const [users, setUsers] = React.useState({});
   const [video, setVideo] = React.useState({});
+  const { theme } = React.useContext(ThemeContext);
 
   React.useEffect(() => {
     const callUsers = async () => {
@@ -42,7 +44,9 @@ function Player() {
         <Grid container spacing={2}>
           <Grid item xs={6} md={9}>
             <img className="player__img" src={videoPlayer.url} alt="player" />
-            <h2 className="player__title">{videoPlayer.title}</h2>
+            <h2 className={`player__title ${theme ? "dark" : ""}`}>
+              {videoPlayer.title}
+            </h2>
             <div className="player__videoInfo d-flex align-items-center justify-content-between">
               <p className="player__subInfo">123k views</p>
               <div className="player__likes d-flex">
@@ -71,7 +75,11 @@ function Player() {
               <div className="palyer__channelInfo">
                 <div className="d-flex align-items-center justify-content-between">
                   <div>
-                    <h3 className="m-0 p-0">
+                    <h3
+                      className={`m-0 p-0 player__userName ${
+                        theme ? "dark" : ""
+                      }`}
+                    >
                       {singleUser.first_name} {singleUser.last_name}
                     </h3>
                     <p className="m-0 p-0 text-secondary">
@@ -85,7 +93,9 @@ function Player() {
                     Subscribe
                   </button>
                 </div>
-                <p className="m-0 p-0">
+                <p
+                  className={`m-0 p-0 player__userDesc ${theme ? "dark" : ""}`}
+                >
                   A successful marketing plan relies heavily on the
                   pulling-power of advertising copy. Writing result-oriented ad
                   copy is difficult, as it must appeal to, entice, and convince

@@ -7,11 +7,13 @@ import lupaImg from "../../Assets/Images/lupa.png";
 import Subscriptions from "../../Components/Subscriptions/Subscriptions";
 import Videos from "../../Components/Videos/Videos";
 import { NavLink } from "react-router-dom";
+import { Context as ThemeContext } from "../../Context/Theme";
 
 function Channel() {
   const params = useParams();
   const [users, setUsers] = React.useState({});
   const [video, setVideo] = React.useState([]);
+  const { theme } = React.useContext(ThemeContext);
   React.useEffect(() => {
     const callUsers = async () => {
       const res = await fetch("https://reqres.in/api/users?page=2");
@@ -38,7 +40,7 @@ function Channel() {
       <img className="channel__background" src={backgroundImg} alt="" />
       <div className="channel__info">
         <div className="channel__user d-flex align-items-center justify-content-between">
-          <div>
+          <div className={`channel__user--name ${theme ? "dark" : ""}`}>
             <img
               className="channel__userImg"
               src={user.avatar}
@@ -60,13 +62,19 @@ function Channel() {
         </div>
         <div className="channel__nav">
           <ul className="list-unstyled p-0 d-flex align-items-center channel__list">
-            <li className="channel__item active">Home</li>
-            <li className="channel__item">Videos</li>
-            <li className="channel__item">Playlists</li>
-            <li className="channel__item">Channels</li>
-            <li className="channel__item">Discussion</li>
-            <li className="channel__item">About</li>
-            <li className="channel__item">
+            <li className={`channel__item ${theme ? "dark" : ""} active`}>
+              Home
+            </li>
+            <li className={`channel__item ${theme ? "dark" : ""}`}>Videos</li>
+            <li className={`channel__item ${theme ? "dark" : ""}`}>
+              Playlists
+            </li>
+            <li className={`channel__item ${theme ? "dark" : ""}`}>Channels</li>
+            <li className={`channel__item ${theme ? "dark" : ""}`}>
+              Discussion
+            </li>
+            <li className={`channel__item ${theme ? "dark" : ""}`}>About</li>
+            <li className={`channel__item ${theme ? "dark" : ""}`}>
               <img src={lupaImg} alt="" />
             </li>
           </ul>
@@ -84,8 +92,10 @@ function Channel() {
             </NavLink>
 
             <div className="channel__videoDesc ms-4">
-              <h2 className="channel__title">{singleVideo.title}</h2>
-              <p>
+              <h2 className={`channel__title ${theme ? "dark" : ""}`}>
+                {singleVideo.title}
+              </h2>
+              <p className={`channel__desc ${theme ? "dark" : ""}`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptates molestias dolor rerum nobis neque sequi,
               </p>
@@ -96,7 +106,7 @@ function Channel() {
           </div>
         </div>
         <div className="channel__videoCollection">
-          <h4 className="mb-4">
+          <h4 className={`mb-4 channel__title--author ${theme ? "dark" : ""}`}>
             {user.first_name} {user.last_name} videos
           </h4>
           <Videos videos={videosBottom} />

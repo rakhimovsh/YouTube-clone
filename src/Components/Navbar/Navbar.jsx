@@ -15,9 +15,11 @@ import more from "../../Assets/Images/more.png";
 import Subscriptions from "../Subscriptions/Subscriptions";
 import Settings from "../../Assets/Images/settings.png";
 import { Context as MenuContext } from "../../Context/HamburgerMenu";
+import { Context as ThemeContex } from "../../Context/Theme";
 function Navbar() {
   const { menu, setMenu } = React.useContext(MenuContext);
   const [users, setUsers] = React.useState({});
+  const { theme } = React.useContext(ThemeContex);
   React.useEffect(() => {
     const callUsers = async () => {
       const res = await fetch("https://reqres.in/api/users?page=2");
@@ -31,7 +33,7 @@ function Navbar() {
     setMenu(xRef);
   }, [menu]);
   return (
-    <section ref={xRef} className="navbar">
+    <section ref={xRef} className={`navbar`}>
       <ul className="list-unstyled p-0 navbar__list">
         <li className="navbar__item">
           <NavLink className="navbar__link--home" to={"/"}>

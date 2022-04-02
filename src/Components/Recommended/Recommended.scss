@@ -33,6 +33,9 @@
   }
   &__title {
     margin-top: 10px;
+    &.dark {
+      color: aliceblue;
+    }
   }
   &__link {
     text-decoration: none;

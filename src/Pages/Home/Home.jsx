@@ -5,6 +5,7 @@ import Videos from "../../Components/Videos/Videos";
 import Recommended from "../../Components/Recommended/Recommended";
 import { makeStyles } from "@mui/styles";
 import Button from "@mui/material/Button";
+import { Context as ThemeContext } from "../../Context/Theme";
 
 const useStyles = makeStyles({
   root: {
@@ -21,6 +22,7 @@ const useStyles = makeStyles({
 function Home() {
   const [users, setUsers] = React.useState({});
   const [video, setVideo] = React.useState({});
+  const { theme } = React.useContext(ThemeContext);
   React.useEffect(() => {
     const callUsers = async () => {
       const res = await fetch("https://reqres.in/api/users?page=2");
@@ -46,7 +48,10 @@ function Home() {
   return (
     <section className="basic">
       <div className="hero">
-        <NavLink className={"basic__link--hero"} to={`/channel/${user.id}`}>
+        <NavLink
+          className={`basic__link--hero ${theme ? "dark" : ""}`}
+          to={`/channel/${user.id}`}
+        >
           <img
             className="basic__user--hero"
             src={user.avatar}
@@ -59,17 +64,17 @@ function Home() {
         <Videos videos={splicedVideos} />
       </div>
       <div className="reco">
-        <h3 className="reco-title">Recommended</h3>
+        <h3 className={`reco__title ${theme ? "dark" : ""}`}>Recommended</h3>
         <Recommended videos={videoReco} />
       </div>
       <div>
         <div className="d-flex align-items-center justify-content-between">
           <NavLink
-            className={"basic__link--hero"}
+            className={`basic__link--hero ${theme ? "dark" : ""}`}
             to={`/channel/${userBottom.id}`}
           >
             <img
-              className="basic__user--hero"
+              className={`basic__user--hero`}
               src={userBottom.avatar}
               alt=""
               width={50}

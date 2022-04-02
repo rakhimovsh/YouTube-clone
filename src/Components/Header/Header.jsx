@@ -8,14 +8,16 @@ import Notification from "../../Assets/Images/notification.png";
 import User from "../../Assets/Images/Userpic.png";
 import { NavLink } from "react-router-dom";
 import { Context as MenuContext } from "../../Context/HamburgerMenu";
+import { Context as ThemeContext } from "../../Context/Theme";
 
 function Header() {
   const { menu } = React.useContext(MenuContext);
   const handleClick = () => {
     menu.current.classList.toggle("close");
   };
+  const { theme, setTheme } = React.useContext(ThemeContext);
   return (
-    <header className="header">
+    <header className={`header ${theme ? "dark" : ""}`}>
       <button onClick={handleClick} className="header__btn--menu">
         <img className="header__logo" src={HamburgerMenu} alt="menu" />
       </button>
@@ -23,7 +25,7 @@ function Header() {
         <img src={SiteLogo} alt="" width={116} height={25} />
       </NavLink>
       <input
-        className="header__search"
+        className={`header__search ${theme ? "dark" : ""}`}
         type="text"
         placeholder="Search"
         autoComplete="off"
@@ -32,9 +34,9 @@ function Header() {
         <NavLink to={"/"}>
           <img src={Phone} alt="" />
         </NavLink>
-        <NavLink to={"/"}>
+        <button className="btn" onClick={() => setTheme(!theme)}>
           <img src={Dot} alt="" />
-        </NavLink>
+        </button>
         <NavLink to={"/"}>
           <img src={Notification} alt="" />
         </NavLink>
