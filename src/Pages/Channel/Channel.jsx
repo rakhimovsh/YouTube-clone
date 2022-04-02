@@ -32,7 +32,7 @@ function Channel() {
   const singleVideo =
     video.length > 0 && video.find((v) => v.id == params.channelId);
   const usersReco = users.length > 0 && users.slice(1, 4);
-  const videosBottom = video.length > 0 && video.slice(50, 60);
+  const videosBottom = video.length > 0 && video.slice(user.id, user.id + 10);
   return (
     <section className="channel">
       <img className="channel__background" src={backgroundImg} alt="" />
@@ -96,7 +96,9 @@ function Channel() {
           </div>
         </div>
         <div className="channel__videoCollection">
-          <h4 className="mb-4">Margaret Phelps videos</h4>
+          <h4 className="mb-4">
+            {user.first_name} {user.last_name} videos
+          </h4>
           <Videos videos={videosBottom} />
         </div>
       </div>

@@ -1,0 +1,9 @@
+.verticalVideo {
+  overflow-y: hidden;
+  &__list {
+    overflow-y: auto;
+  }
+  &__item + &__item {
+    margin-top: 23px;
+  }
+}
